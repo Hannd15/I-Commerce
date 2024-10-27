@@ -61,10 +61,10 @@ class ItemController extends Controller
         }
         return redirect()->back()->with('error', 'Item not found');
     }
-    public function getItem($id_item){ // Falta añadir la vista para mostrar el item, sin json xd, se puso por la autocompleción
-        $item = Item::find($id_item->id);
+    public static function getItem($id_item){ // Falta añadir la vista para mostrar el item, sin json xd, se puso por la autocompleción
+        $item = Item::find($id_item);
         if ($item){
-            return response()->json($item);
+            return $item;
         }
         return response()->json(['error' => 'Item not found'], 404);
     }

@@ -18,6 +18,7 @@ Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/home', [HomeController::class, 'index'])->middleware('auth')->name('home');
 
 Route::get('/cart',[CartController::class, 'index'])->name('cart');
+Route::post('/cu', [CartController::class, 'updateCart'])->name('cart.update');
 
 Route::get('/xd', function(){
     return view('test');
