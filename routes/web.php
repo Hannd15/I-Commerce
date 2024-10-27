@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\ChatController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ItemController;
@@ -16,7 +17,11 @@ Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::get('/home', [HomeController::class, 'index'])->middleware('auth')->name('home');
 
+Route::get('/cart',[CartController::class, 'index'])->name('cart');
 
+Route::get('/xd', function(){
+    return view('test');
+})->name('xd');
 
 Route::post('/ic', [ItemController::class, 'createItem'])->name('items.create');
 Route::post('/id', [ItemController::class, 'deleteItem'])->name('items.delete');

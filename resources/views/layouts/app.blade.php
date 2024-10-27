@@ -16,7 +16,8 @@
             </style>
         @endif
     </head>
-    <body class="">
+    <body>
+        @include('components.navbar')
         @yield('content')
     </body>
 </html>
