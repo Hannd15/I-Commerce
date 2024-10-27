@@ -18,7 +18,7 @@
     </head>
     <body class="">
         <div>
-            <form action="{{ route('login.auth') }}" method="post">
+            <form action="{{ route('register.auth') }}" method="post">
                 @csrf
                 <div>
                     <label for="username">Username</label>
@@ -29,8 +29,7 @@
                     <input type="password" name="password" id="password" class="bg-gray-200">
                 </div>
                 <div>
-                    <button type="submit">Login</button>
-                    <button><a href="{{ route('register') }}">Register</button>
+                    <button type="submit">register</button>
                 </div>
             </form>
             @if($errors->any())
